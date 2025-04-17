@@ -31,7 +31,7 @@
   <!-- Header Section -->
   <header>
     <h1 class="header-title">
-      LawyerBench: Collecting and Simulating<br>Lawyers Thought Process
+      LawFlow: Collecting and Simulating Lawyers' Thought Processes 
     </h1>
     
     <!-- Authors Section -->
@@ -160,7 +160,7 @@
       </span>  
       <span class="link-block">
         <a
-          href=""
+          href="https://github.com/minnesotanlp/LawFlow/"
           target="_blank"
           class="external-link button is-normal is-rounded is-dark is-outlined"
         >
@@ -174,14 +174,6 @@
     </div>
   </div>
 
-
-
-
-
-
-
-
-
   </header>
 
 
@@ -189,22 +181,19 @@
   <!-- Overview Section -->
   <section class="overview-section">
     <div class="overview-container">
-      <h2>Overview</h2>
+      <h2>Research Overview</h2>
       <ul>
         <li>
-          LawyerBench is revolutionizing legal AI by navigating lawyer's thought process in the entire business entity formation process—from client consultations to customer interaction to note taking to drafting and filing legal documents. 
+
+          LawFlow is a dataset that captures full end-to-end legal workflows, revealing how law students navigate real-world drafting tasks like business entity formation, from client consultations to drafting and filing legal documents. Unlike existing legal AI benchmarks that focus on isolated tasks, LawFlow models the entire decision process, including ambiguity, iteration, and client-specific reasoning.
+
         </li>
         <li>
-          The collected process data will be used for training a cutting-edge Legal LLM Agent that navigates the entirety of legal tasks and assists lawyers in their legal processing with much less cognitive burdens. This project doesn’t just automate legal workflows; it builds a rich dataset to fuel the next generation of AI-powered legal reasoning. 
-        </li>
-        <li>
-          The LawyerBench is funded by <a href="https://www.openphilanthropy.org/">Open Philanthropy</a>, and most research is conducted by a collaboration between the <a href="https://minnesotanlp.github.io/">Minnesota lab</a> and the <a href="https://law.umn.edu/">UMN Law School</a>.
+          By comparing human and LLM-generated workflows, LawFlow uncovers how human legal reasoning is modular, adaptive, and context-sensitive—while LLMs tend to follow rigid, linear paths. These insights open new directions for building collaborative AI tools that support, rather than replace, human legal judgment.
         </li>
       </ul>
       <div class="overview-gallery">
-        <img id="overview-image" src="./assets/images/projDiagram.png" alt="Project Diagram">
-        <button id="prev-button">&#8592;</button>
-        <button id="next-button">&#8594;</button>
+        <img id="overview-image" src="./assets/images/figure_1.png" alt="Project Diagram">
       </div>
     </div>
   </section>
@@ -212,7 +201,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const images = [
-        { src: './assets/images/projDiagram.png', alt: 'Project Diagram' },
+        { src: './assets/images/figure_1.png', alt: 'Project Diagram' },
         { src: './assets/gifs/IntroGif.gif', alt: 'Platform Tool Work Demo' }
       ];
       let currentIndex = 0;
@@ -236,114 +225,116 @@
 
 
 
-  <!-- ---------- Platform Section ---------- -->
+<!-- ---------- Platform Section ---------- -->
 <section class="platform-section">
-    <div class="platform-container">
-      <h2>Data Collection Platform</h2>
-      <p class="platform-description">
-        Our database captures real-world business entity formation scenarios, starting with a seed scenario provided by a local business. Through conversations with the business owner, a lawyer initiates the legal process, meticulously documenting and taking notes of each step—from initial discussions to formal filings. The process culminates in a finalized agreement document, serving as the definitive legal outcome.
-      </p>
-      <p class="platform-demo-invite">
-        Watch the demo video below to see it in action! 🚀
-      </p>
-      <div class="video-container">
-        <video controls>
-          <source src="./assets/videos/ToolVideo.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-      <h3 class="platform-how">How It Works:</h3>
-      <ul class="platform-bullets">
-        <li>📌 <strong>1. Log In</strong> – Secure access for authorized users.</li>
-        <li>📌 <strong>2. Create a New Project & Invite Collaborators</strong> – Launch projects (e.g., "Spring 2025 Entity Formation") and add RAs or professors.</li>
-        <li>📌 <strong>3. High-Level Planning Page</strong> – Visualize tasks/sub-tasks (44 total) in a node-based workflow with recommended sequences.</li>
-        <li>📌 <strong>4. Features Page</strong> – Conduct Zoom calls, take notes, edit legal documents, and access research templates—all in one place.</li>
-        <li>📌 <strong>5. Automatic Data Collection</strong> – Every action is logged in MongoDB, creating a foundation for analytics and future LLM training.</li>
-      </ul>
-    </div>
-  </section>
-  
+  <div class="platform-container">
+    <h2>Data Collection Tool</h2>
+    <p class="platform-description">
+      Our database captures real-world business entity formation scenarios, starting with a seed scenario provided by a local business. Through conversations with the business owner, a lawyer initiates the legal process, meticulously documenting and taking notes of each step—from initial discussions to formal filings. The process culminates in a finalized agreement document, serving as the definitive legal outcome.
+    </p>
+
+<div class="platform-image-container" style="text-align: center; margin: 20px 0;">
+  <img src="./assets/images/figure_2.png" alt="Platform Overview" style="max-width: 100%; height: auto; border-radius: 8px;" />
+</div>
+
+<h3 class="platform-how">Key Features:</h3>
+<ul class="platform-bullets">
+  <li>📌 <strong>Subtask Annotation</strong> – Tag actions to modular task nodes from an expert-verified legal workflow. Supports non-linear paths and rationale logging.</li>
+  <li>📌 <strong>Live Note-Taking</strong> – Persistent field for informal notes (e.g., during client intake), with full keystroke logging for later analysis.</li>
+  <li>📌 <strong>Template Library</strong> – Access and reuse agreement templates, simulating real-world use of legal precedents and boilerplate search.</li>
+  <li>📌 <strong>Legal Search Interface</strong> – Perform open and template-specific searches, reflecting how legal professionals integrate research into decisions.</li>
+  <li>📌 <strong>Document Editor</strong> – Draft agreements in a built-in word processor; all edits are logged to capture revision behavior over time.</li>
+</ul>
+<p class="platform-description">
+  This data collection tool enables us to study not just what decisions are made while drafting by law students, but also how they adapt, iterate, and navigate ambiguity across the full drafting workflow.
+</p>
+</div>
+</section>
  
 
   
-  <!-- ---------- Entity Formation Workflow Section ---------- -->
-<section class="entity-formation-section">
-    <div class="entity-formation-container">
-      <h2>Entity Formation Workflow</h2>
-      <p class="entity-workflow-intro">
-        The higher-level planning stage is visualized within our tool, as demonstrated in the GIF below, allowing users to navigate workflows with precision and ease. 🚀
-      </p>
-      <div class="entity-gif-container">
-        <img src="./assets/gifs/EntityGif.gif" alt="Diagram inside the tool">
-      </div>
-      <p class="entity-workflow-description">
-        Our business entity formation process is structured into five major tasks, each representing a crucial phase of legal workflow. 
-        Within each task, multiple sub-tasks break down the process into manageable, actionable steps.<br><br>
-        For instance, a task like “Gather Client Information” includes sub-tasks such as note-taking, gap analysis, 
-        and targeted searches—all seamlessly integrated within our node-based structure. 
-        This structured approach ensures clarity, efficiency, and consistency across every stage of the legal process.
-      </p>
-      <!-- Gallery -->
-      <div class="gallery-view">
-        <div class="gallery-image-container">
-          <img id="gallery-image" src="" alt="">
-          <div class="gallery-caption" id="gallery-caption"></div>
-        </div>
-        <button id="gallery-prev" class="gallery-nav">&larr;</button>
-        <button id="gallery-next" class="gallery-nav">&rarr;</button>
-      </div>
-    </div>
+<!-- ---------- Entity Formation Workflow Section ---------- --> 
+<section class="entity-formation-section"> <div class="entity-formation-container"> <h2>Entity Formation Workflow</h2> <p class="entity-workflow-intro"> Our data collection tool is rooted in a  visual, expert-informed task plan that maps out the full legal drafting workflow—from initial client intake to final agreement. 🎯 This task plan supports flexible navigation across subtasks in the data collection tool, while maintaining a clear structure rooted in real-world practice. </p>
+
+
+  <div class="workflow-gallery" style="display: flex; align-items: center; justify-content: center; gap: 10px; margin: 20px 0;">
+    <button id="workflow-prev" class="button is-small" style="flex-shrink: 0;">&larr;</button>
+    
+    <img id="workflow-image" 
+         src="./assets/images/figure_3.png" 
+         alt="Entity Workflow" 
+         style="max-width: 90%; height: auto; border-radius: 8px;" />
+    
+    <button id="workflow-next" class="button is-small" style="flex-shrink: 0;">&rarr;</button>
+  </div>
+  
+  <p class="entity-workflow-description">
+    The workflow is organized across three levels of detail:
+  </p>
+  
+  <ul class="platform-bullets" style="margin-bottom: 20px;">
+    <li><strong>Inter-subtask level:</strong> Major phases like client intake, memo drafting, and agreement creation.</li>
+    <li><strong>Intra-subtask level:</strong> Connected steps within each phase—e.g., gathering facts, conducting research, revising drafts.</li>
+    <li><strong>Node level:</strong> Fine-grained individual actions, such as writing a clause or asking a follow-up question.</li>
+  </ul>
+  
+  <p class="entity-workflow-description">
+    This multi-layered structure allows us to capture the dynamic, non-linear nature of legal work—supporting both detailed analysis and AI tools that align with how real practitioners think and operate.
+  </p>
+  
+  <p class="entity-workflow-description">
+    For example, the entity formation workflow includes five key stages:
+  </p>
+  
+  <ul class="platform-bullets">
+    <li>📌 <strong>Information Gathering:</strong> Identify client goals, legal gaps, and jurisdictional specifics.</li>
+    <li>📌 <strong>Deciding a Recommendation:</strong> Evaluate constraints, perform legal research, and determine a course of action.</li>
+    <li>📌 <strong>Drafting a Client Memo:</strong> Summarize recommendations, highlight open issues, and prepare for feedback.</li>
+    <li>📌 <strong>Drafting the Operating Agreement:</strong> Use precedent templates, edit iteratively, and align with client needs.</li>
+    <li>📌 <strong>Assessing Tax Treatment (Optional):</strong> Consider tax impacts and consult specialists when necessary.</li>
+  </ul>
+  
+  <p class="entity-workflow-description">
+    Together, these levels form a flexible yet robust blueprint for capturing and analyzing legal workflows in real-world scenarios.
+  </p>
+  
+  
   </section>
   
+  
+  
+  
   <script>
-    // Gallery items data
-    const galleryItems = [
-      {
-        src: "./assets/images/MainTasks.png",
-        alt: "Main Tasks Diagram",
-        caption: "Main Tasks Diagram",
-        width: { xs: "100%", md: "80%" }
-      },
-      {
-        src: "./assets/images/TaskSubtask.png",
-        alt: "Sub-Task Diagram",
-        caption: "Sub-Task Diagram",
-        width: { xs: "90%", md: "40%" }
+    document.addEventListener('DOMContentLoaded', function () {
+      const workflowImages = [
+        { src: './assets/images/figure_3.png', alt: 'Entity Workflow Overview' },
+        { src: './assets/gifs/EntityGif.gif', alt: 'Entity Workflow GIF' }
+      ];
+  
+      let workflowIndex = 0;
+      const workflowImage = document.getElementById('workflow-image');
+      const prevBtn = document.getElementById('workflow-prev');
+      const nextBtn = document.getElementById('workflow-next');
+  
+      function updateWorkflowImage() {
+        const current = workflowImages[workflowIndex];
+        workflowImage.src = current.src;
+        workflowImage.alt = current.alt;
       }
-    ];
-    
-    let currentGalleryIndex = 0;
-    const galleryImage = document.getElementById("gallery-image");
-    const galleryCaption = document.getElementById("gallery-caption");
   
-    function updateGallery() {
-      const item = galleryItems[currentGalleryIndex];
-      galleryImage.src = item.src;
-      galleryImage.alt = item.alt;
-      galleryCaption.textContent = item.caption;
-      // Adjust image width based on viewport size
-      if (window.innerWidth < 768) {
-        galleryImage.style.width = item.width.xs;
-      } else {
-        galleryImage.style.width = item.width.md;
-      }
-    }
+      prevBtn.addEventListener('click', function () {
+        workflowIndex = (workflowIndex - 1 + workflowImages.length) % workflowImages.length;
+        updateWorkflowImage();
+      });
   
-    document.getElementById("gallery-prev").addEventListener("click", function() {
-      currentGalleryIndex = (currentGalleryIndex - 1 + galleryItems.length) % galleryItems.length;
-      updateGallery();
+      nextBtn.addEventListener('click', function () {
+        workflowIndex = (workflowIndex + 1) % workflowImages.length;
+        updateWorkflowImage();
+      });
+  
+      updateWorkflowImage();
     });
-  
-    document.getElementById("gallery-next").addEventListener("click", function() {
-      currentGalleryIndex = (currentGalleryIndex + 1) % galleryItems.length;
-      updateGallery();
-    });
-  
-    window.addEventListener("resize", updateGallery);
-    updateGallery();
   </script>
-
-
 
 
   <!-- ---------- Workflow Visualization Section ---------- -->
@@ -405,366 +396,406 @@
   </script>
   
 
-  <!-- ---------- Sample Operating Agreements Section ---------- -->
+<!-- ---------- Sample Operating Agreements Section ---------- -->
 <section class="operating-agreements-section">
-    <div class="operating-container">
-      <h2 class="section-title">Generated Operating Agreements</h2>
-      <p class="section-description">
-        Our database captures real-world business entity formation scenarios, starting with a seed scenario provided by a local business. Through conversations with the business owner, a lawyer initiates the legal process, meticulously documenting each step—from initial discussions to formal filings. The process culminates in a finalized agreement document, serving as the definitive legal outcome.
-      </p>
-      <!-- Flex container to hold two columns -->
-      <div class="agreements-grid">
-        <!-- Column 1 -->
-        <div class="agreement-column">
-          <div class="agreement-example" data-index="0">
-            <div class="agreement-tabs">
-              <button class="tab-button active" data-tab="0">Lawyer's Memo</button>
-              <button class="tab-button" data-tab="1">Seed Scenario</button>
-              <button class="tab-button" data-tab="2">Final Operating Agreement</button>
-            </div>
-            <div class="tab-content active" data-content="0">
-              <img src="./assets/gifs/Trans1.gif" alt="Intermediate Transformation">
-            </div>
-            <div class="tab-content" data-content="1">
-              <iframe src="./assets/docs/Prompt1.pdf" title="Input Prompt"></iframe>
-            </div>
-            <div class="tab-content" data-content="2">
-              <iframe src="./assets/docs/OA1.pdf" title="Final Operating Agreement"></iframe>
+  <div class="operating-container">
+    <h2 class="section-title">Generated Operating Agreements</h2>
+    <p class="section-description">
+    Each scenario in our dataset is grounded in real-world business needs, with law students simulating the full legal workflow from client intake to final agreement drafting. Human workflows are flexible and iterative, often looping back to revise earlier steps. In contrast, LLMs follow a more rigid, linear path—highlighting key differences in how humans and AI approach complex legal reasoning.
+    </p>
+
+    <!-- Flex container to hold two columns -->
+    <div class="agreements-grid">
+      <!-- Column 1 -->
+      <div class="agreement-column">
+        <div class="agreement-example" data-index="0">
+          <div class="agreement-tabs">
+            <button class="tab-button active" data-tab="0">Execution Graphs</button>
+            <button class="tab-button" data-tab="1">Seed Scenario</button>
+            <button class="tab-button" data-tab="2">Human Generated Agreement</button>
+          </div>
+          <div class="tab-content active" data-content="0">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+              <img src="./assets/images/scenario_15_human.png" alt="Human Execution Graph">
+              <div><strong>Human Execution Graph</strong></div>
             </div>
           </div>
+          <div class="tab-content" data-content="1">
+            <iframe src="./assets/docs/Prompt15.pdf" title="Input Prompt"></iframe>
+          </div>
+          <div class="tab-content" data-content="2">
+            <iframe src="./assets/docs/OA15.pdf" title="Human Generated Agreement"></iframe>
+          </div>
         </div>
-        <!-- Column 2 -->
-        <div class="agreement-column">
-          <div class="agreement-example" data-index="1">
-            <div class="agreement-tabs">
-              <button class="tab-button active" data-tab="0">Lawyer's Memo</button>
-              <button class="tab-button" data-tab="1">Seed Scenario</button>
-              <button class="tab-button" data-tab="2">Final Operating Agreement</button>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="agreement-column">
+        <div class="agreement-example" data-index="1">
+          <div class="agreement-tabs">
+            <button class="tab-button active" data-tab="0">Execution Graphs</button>
+            <button class="tab-button" data-tab="1">Seed Scenario</button>
+            <button class="tab-button" data-tab="2">LLM Generated Agreement</button>
+          </div>
+          <div class="tab-content active" data-content="0">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+              <img src="./assets/images/scenario_15_o1.png" alt="O1 Execution Graph">
+              <div><strong>OpenAI O1 Execution Graph</strong></div>
             </div>
-            <div class="tab-content active" data-content="0">
-              <img src="./assets/gifs/Trans2.gif" alt="Intermediate Transformation">
-            </div>
-            <div class="tab-content" data-content="1">
-              <iframe src="./assets/docs/Prompt2.pdf" title="Input Prompt"></iframe>
-            </div>
-            <div class="tab-content" data-content="2">
-              <iframe src="./assets/docs/OA2.pdf" title="Final Operating Agreement"></iframe>
-            </div>
+          </div>
+          <div class="tab-content" data-content="1">
+            <iframe src="./assets/docs/Prompt15.pdf" title="Input Prompt"></iframe>
+          </div>
+          <div class="tab-content" data-content="2">
+            <iframe src="./assets/docs/OA15_O1.pdf" title="LLM Generated Agreement"></iframe>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  
-  <script>
-    // Attach tab switching functionality to each agreement example
-    document.querySelectorAll('.agreement-example').forEach(function(agreement) {
-      const tabButtons = agreement.querySelectorAll('.tab-button');
-      const tabContents = agreement.querySelectorAll('.tab-content');
-      
-      tabButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
-          const tab = this.getAttribute('data-tab');
-          // Remove active state from all buttons and contents
-          tabButtons.forEach(btn => btn.classList.remove('active'));
-          tabContents.forEach(content => content.classList.remove('active'));
-          // Activate the clicked button and corresponding content
-          this.classList.add('active');
-          agreement.querySelector('.tab-content[data-content="'+tab+'"]').classList.add('active');
-        });
+  </div>
+</section>
+
+<script>
+  // Attach tab switching functionality to each agreement example
+  document.querySelectorAll('.agreement-example').forEach(function(agreement) {
+    const tabButtons = agreement.querySelectorAll('.tab-button');
+    const tabContents = agreement.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        const tab = this.getAttribute('data-tab');
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+        this.classList.add('active');
+        agreement.querySelector('.tab-content[data-content="'+tab+'"]').classList.add('active');
       });
     });
-  </script>
-  
+  });
+</script>
 
-  <!-- ---------- Dataset Card Section ---------- -->
-<section class="dataset-card-section">
-    <div class="dataset-card-container">
-      <h2>Dataset Card</h2>
-      <p class="dataset-description">
-        We collected data from real tasks; here’s a sample from the dataset:
-      </p>
-      <div id="json-preview" class="json-preview"></div>
-    </div>
-  </section>
-  
-  
-  <script>
-    // The sample JSON string
-    const sampleJson = `{
-      "project_name": "September14",
-      "task_name": "Ask Default Questions",
-      "metadata": {
-        "action": "note taking",
-        "activity_type": "notes_change",
-        "timestamp": "2024-09-18T16:07:03.646+00:00",
-        "content": "<p>Asking open ended questions about nature of the business and their desires</p><p><br></p><p>Chad: two clients are friends from college that share an interest in food and cooking. Chad owns a food trailer and they have already began a taco food truck business wi</p>"
-      }
-    }`;
-  
-    let jsonData;
-    try {
-      jsonData = JSON.parse(sampleJson);
-    } catch (e) {
-      document.getElementById('json-preview').textContent = "Error parsing JSON";
-    }
-  
-    /**
-     * Recursively render JSON data.
-     * @param {any} data - JSON data.
-     * @param {number} indent - Current indent level.
-     * @returns {HTMLElement} The DOM element representing the rendered JSON.
-     */
-    function renderJSON(data, indent = 0) {
-      // Create a container div with left margin according to indent
-      const container = document.createElement('div');
-      container.style.marginLeft = (indent * 20) + 'px';
-  
-      if (typeof data !== 'object' || data === null) {
-        const span = document.createElement('span');
-        if (typeof data === 'number') {
-          span.style.color = 'blue';
-          span.textContent = data;
-        } else if (typeof data === 'string') {
-          span.style.color = '#006400';
-          span.textContent = `"${data}"`;
-        } else {
-          span.textContent = String(data);
-        }
-        container.appendChild(span);
-        return container;
-      }
-  
-      // If data is an array, render each item
-      if (Array.isArray(data)) {
-        const span = document.createElement('span');
-        span.textContent = '[ ';
-        data.forEach((item, idx) => {
-          span.appendChild(renderJSON(item, indent + 1));
-          if (idx < data.length - 1) {
-            span.appendChild(document.createTextNode(', '));
-          }
-        });
-        span.appendChild(document.createTextNode(' ]'));
-        container.appendChild(span);
-        return container;
-      }
-  
-      // Data is an object: render its key-value pairs
-      const openingBrace = document.createElement('span');
-      openingBrace.textContent = '{';
-      container.appendChild(openingBrace);
-  
-      const entries = Object.entries(data);
-      entries.forEach(([key, value], idx) => {
-        // Create a line (div) for this key/value pair
-        const line = document.createElement('div');
-        line.classList.add('json-line');
-        line.classList.add(`indent-${indent}`);
-        // Even/odd based on index
-        line.classList.add(idx % 2 === 0 ? 'even' : 'odd');
-  
-        // Render key in red
-        const keySpan = document.createElement('span');
-        keySpan.style.color = 'red';
-        keySpan.textContent = `"${key}"`;
-        line.appendChild(keySpan);
-        line.appendChild(document.createTextNode(': '));
-        // Render value recursively
-        line.appendChild(renderJSON(value, indent + 1));
-        // Append comma if not the last entry
-        if (idx < entries.length - 1) {
-          line.appendChild(document.createTextNode(','));
-        }
-        container.appendChild(line);
-      });
-  
-      const closingBrace = document.createElement('span');
-      closingBrace.textContent = '}';
-      container.appendChild(closingBrace);
-      return container;
-    }
-  
-    // Render the JSON and insert it into the preview container.
-    const previewContainer = document.getElementById('json-preview');
-    if (jsonData) {
-      previewContainer.appendChild(renderJSON(jsonData));
-    }
-  </script>
-  
-  <!-- ---------- Data Insights Section ---------- -->
+<!-- ---------- Data Insights Section ---------- -->
 <section class="data-insights-section">
-    <div class="data-insights-container">
-      <h2>Data Insights</h2>
-      <div class="insights-gallery">
-        <!-- Research Question -->
-        <p id="insights-research" class="insights-research"></p>
-        <!-- Large Image -->
-        <img id="insights-image" src="" alt="" class="insights-image">
-        <!-- Insights as Bullet Points -->
-        <div class="insights-list-container">
-          <ul id="insights-list"></ul>
+  <div class="data-insights-container">
+    <h2>Insights from LawFlow</h2>
+    <div class="insights-gallery">
+      <!-- Research Question -->
+      <p id="insights-research" class="insights-research"></p>
+      <!-- Large Image -->
+      <img id="insights-image" src="" alt="" class="insights-image">
+      <!-- Insights as Bullet Points -->
+      <div class="insights-list-container">
+        <ul id="insights-list"></ul>
+      </div>
+      <!-- Navigation Arrows -->
+      <button id="insights-prev" class="insights-nav">&#8592;</button>
+      <button id="insights-next" class="insights-nav">&#8594;</button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .data-insights-section {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 60px 0;
+  }
+  .data-insights-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+  .data-insights-container h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-bottom: 40px;
+    font-size: 3rem;
+    color: #333;
+  }
+  .insights-gallery {
+    position: relative;
+    text-align: center;
+    margin-top: 4rem;
+  }
+  .insights-research {
+    margin-bottom: 1rem;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 2rem;
+    font-style: bold;
+    color: #333;
+    margin-bottom: 2rem;
+
+  }
+  .insights-image {
+    max-width: 100%;
+    width: 80%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  .insights-list-container {
+    text-align: center;
+    width: 80%;
+    margin: 1rem auto 0;
+  }
+  .insights-list-container ul {
+    padding-left: 1rem;
+    margin: 0;
+    text-align: justify;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+  }
+  .insights-list-container li {
+    margin-bottom: 0.5rem;
+  }
+  .insights-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+  }
+  #insights-prev {
+    left: 5%;
+  }
+  #insights-next {
+    right: 5%;
+  }
+  @media (max-width: 768px) {
+    .insights-image, .insights-list-container {
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  (function(){
+    const slides = [
+      {
+        researchQuestion: "How do human and LLM-generated legal plans differ in structure?",
+        src: "./assets/images/RQ1.png",
+        alt: "Data Insights Slide 1",
+        insights: ["The image compares human and LLM task plans: while LLMs generate flat, sequential workflows with many top-level steps, human plans are more hierarchical—starting with broad subtasks and expanding into detailed, modular branches. Some human steps have no LLM equivalent (black nodes), highlighting gaps in AI’s understanding of nuanced legal tasks."
+        ]
+      },
+      {
+        researchQuestion: " How do human and LLM-generated legal workflows differ in structure, execution, and adherence to task plans?",
+        src: "./assets/images/RQ3.png",
+        alt: "Data Insights Slide 2",
+        insights: [
+          "Comparison of human and LLM execution across two scenarios. Human execution exhibits a more non-linear and cyclic structure, characterized by repeated tasks, whereas LLM execution is linear and sequential."
+        ]
+      },
+      {
+        researchQuestion: " What do diverse legal workflows look like?",
+        src: "./assets/images/RQ2.png",
+        alt: "Data Insights Slide 3",
+        insights: [
+          "All workflows matter: Whether comparing the same person across tasks or different people on similar tasks, each workflow shows a unique yet valid path to completion, highlighting the flexibility and diversity of legal reasoning in practice."
+        ]
+      },
+      {
+        researchQuestion: "How can we flag unlikely or anomalous steps in a workflow ?",
+        src: "./assets/images/RQ4.png",
+        alt: "Data Insights Slide 3",
+        insights: [
+          "Each workflow step is scored based on how closely it aligns with typical human behavior. Steps are flagged as 'on track,' 'needs review,' or 'off track,' helping identify actions that follow, diverge from, or significantly depart from common legal reasoning patterns."
+        ]
+      }
+    ];
+    
+    let currentIndex = 0;
+    const researchElement = document.getElementById("insights-research");
+    const imageElement = document.getElementById("insights-image");
+    const listElement = document.getElementById("insights-list");
+    
+    function updateSlide() {
+      const slide = slides[currentIndex];
+      researchElement.textContent = slide.researchQuestion;
+      imageElement.src = slide.src;
+      imageElement.alt = slide.alt;
+      listElement.innerHTML = "";
+      slide.insights.forEach(function(point) {
+        const li = document.createElement("li");
+        li.textContent = point;
+        listElement.appendChild(li);
+      });
+    }
+    
+    document.getElementById("insights-prev").addEventListener("click", function(){
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateSlide();
+    });
+    document.getElementById("insights-next").addEventListener("click", function(){
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateSlide();
+    });
+    
+    updateSlide();
+  })();
+</script>
+
+
+<!-- ---------- Dataset Card Section (Tabbed) ---------- -->
+<section class="dataset-card-section">
+  <div class="dataset-card-container">
+    <h2>Dataset Card</h2>
+    <p class="dataset-description">
+      We gathered data from law students working through real-world business formation scenarios—an example is shown below under the 'Human' tab. Using the same task plan, we also had LLMs like DeepSeek R1 and OpenAI O1 generate workflows for these scenarios. Switch to the LLM tab to see a sample output from the O1 model.
+    </p>
+
+    <div class="agreements-grid">
+      <!-- Human Column -->
+      <div class="agreement-column">
+        <div class="agreement-example" data-index="0">
+          <div class="agreement-tabs">
+            <button class="tab-button active" data-tab="0">Human</button>
+            <button class="tab-button" data-tab="1">LLM</button>
+          </div>
+          <div class="tab-content active" data-content="0">
+            <div id="json-preview-human" class="json-preview"></div>
+          </div>
+          <div class="tab-content" data-content="1">
+            <div id="json-preview-llm" class="json-preview"></div>
+          </div>
         </div>
-        <!-- Navigation Arrows -->
-        <button id="insights-prev" class="insights-nav">&#8592;</button>
-        <button id="insights-next" class="insights-nav">&#8594;</button>
       </div>
     </div>
-  </section>
-  
-  <style>
-    .data-insights-section {
-      background-color: #f5f5f5;
-      width: 100%;
-      padding: 60px 0;
-    }
-    .data-insights-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 20px;
-      text-align: center;
-    }
-    .data-insights-container h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      margin-bottom: 40px;
-      font-size: 3rem;
-      color: #333;
-    }
-    .insights-gallery {
-      position: relative;
-      text-align: center;
-      margin-top: 4rem;
-    }
-    .insights-research {
-      margin-bottom: 1rem;
-      font-family: 'Noto Sans', sans-serif;
-      font-size: 2rem;
-      font-style: bold;
-      color: #333;
-      margin-bottom: 2rem;
+  </div>
+</section>
 
+<script>
+  const sampleJsonHuman = `{
+  "scenario_id": 1,
+  "scenario": "Title: Three-Person Coffee Truck with Entity Formation Contingency\\nContext:\\nThree friends, A, B, and C, want to form a coffee shop out of a food trailer that A purchased while the three were college roommates. They had informally used the trailer to sell coffee products on campus, but would like to see if they could form a real business. The key to their popularity has been A\u2019s importation of Hawaiian coffee beans, which help the trio brew delicious coffee drinks but has proven to be an expensive business decision. If they form an entity, they might want to see whether they could have investors supply some extra money to help them cover the cost of importing the beans. They would plan on giving the investors some kind of profit interest in the business in exchange for their help, but aren\u2019t too familiar with how that would work.\\n\\nIn addition, this venture has largely been A\u2019s project. B and C aren\u2019t quite as invested, as they have more time-consuming careers of their own. The group\u2019s other friends, D and E, however, have kept in touch with A and have expressed interest in joining the business in place of B and C. B and C might be open to this as well, but will need some time to think. A must also later decide if he wants anyone involved with the business to be able to come and go as they please, or if he wants a firmer commitment from anyone involved with the truck (either B and C or D and E) to devote more of their time and resources to it.\\n\\nDetails:\\nThree-person...\\nSale of Goods\\nPersonal Property\\nEntity Selection\\n\\nComplexity Tags:\\n1. Memo needed\\n2. Diverging Interests of Clients\\n8. Multiple Sessions Needed for Entity Choice\\n\\nComplexity: Medium",
+  "plan": "1. Gather basic information, discover any underlying complexities\\n    1.1 Ask Default Questions\\n        1.1.1 Take Notes\\n    1.2 Identify potential complications/follow-up questions\\n        1.2.1 Ask follow-up questions\\n    1.3 Identify gaps in knowledge\\n        1.3.1 Search within appropriate realm of resources\\n        1.3.2 Consult colleagues and obtain feedback\\n\\n2. Decide on recommendation to client(s), file forms\\n    2.1 Think about recommendations\\n        2.1.1 Consider counter-arguments/pros and cons\\n    2.2 Identify most important considerations / Decide whether open/shut\\n        2.2.1 Identify whether you can reasonably represent interests of all clients in this case\\n        2.2.2 Communicate with clients if needed\\n    2.3 Determine if you're doing business out of state (will need to file for each state)\\n        2.3.1 Search for relevant info about determining state jx\\n            2.3.1.1 Ask follow-up questions to client if needed\\n        2.3.2 Consult Secretary of State business filling resources (or similar) in relevant jx\\n        2.3.3 File forms personally\\n        2.3.4 Meet with client to file forms\\n        2.3.5 Write memo to client about how to file forms\\n\\n3. Send memo to client\\n    3.1 Write memo\\n        3.1.1 Obtain feedback from colleagues\\n            3.1.1.1 Revise memo\\n        3.1.2 Identify gaps in knowledge (#3)\\n            3.1.2.1 Search within appropriate realm of resources\\n\\n4. Write an Operating Agreement\\n    4.1 Search available template docs\\n        4.1.1 Edit selected template document to create operating agreement\\n            4.1.1.1 Obtain feedback from colleagues\\n                4.1.1.1.1 Revise operating agreement\\n            4.1.1.2 Compare with past agreements/documents used\\n        4.1.2 Identify applicable precedents\\n            4.1.2.1 Determine best (most well-crafted, most precise) and most relevant resources\\n            4.1.2.2 Identify various clauses, provisions that will be useful\\n\\n5. Address Tax Treatment of Entity\\n    5.1 Ask default tax questions of client\\n    5.2 Ask default tax questions of entity\\n    5.3 Identify gaps in knowledge (#5)\\n    5.4 Search within appropriate realm of resources\\n    5.5 Decide whether open/shut\\n        5.5.1 Advise on best entity form\\n        5.5.2 Refer out to tax professional if necessary",
+  "agent": "human",
+  "agent_id": 1,
+  "execution": [
+    {
+      "step_id": 1,
+      "current_task": "1.1.1 Take Notes",
+      "action_taken": "notes_change",
+      "task_content": "Client names: A, B, and C (friends recent college graduates)\\n\\nBackground: Coffee shop business (profit-driven, not nonprofit). These three had food cart/truck while in college which they ran part time. Want to build company now.\\n*A's uncle sourced beans from Hawaii, B and C good at brewing. Beans are expensive but they prefer not to switch source in the short term. Sold to students mostly. Both hot and iced coffee, as well as water bottles. \\nTuesday Thursday Saturday and Sunday operations. 4-5 hours on weekdays, 6-7 hours on weekends. Would deal with abnormal weeks on ad hoc basis to agree on alternative schedule. Had to be flexible depending on class schedules; prefer to have 2-3 people there at a time.\\n*A couple friends helped out for free coffee but not on regular schedule/on par with CRR. C and B's careers are taking off, and they're considering having the friends take their places. (need for flexibility in membership). A is on same page that the two friends might do so...",
+      "next_task": "1.1.1 Take Notes",
+      "task_type": "observable",
+      "llm_reasoning": null,
+      "llm_complete_output": null
     }
-    .insights-image {
-      max-width: 100%;
-      width: 80%;
-      height: auto;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+  ]
+}`;
+
+  const sampleJsonLLM  = `{
+  "scenario_id": 1,
+  "scenario": "Title: Three-Person Coffee Truck with Entity Formation Contingency\\nContext:\\nThree friends, A, B, and C, want to form a coffee shop out of a food trailer that A purchased while the three were college roommates. They had informally used the trailer to sell coffee products on campus, but would like to see if they could form a real business. The key to their popularity has been A\u2019s importation of Hawaiian coffee beans, which help the trio brew delicious coffee drinks but has proven to be an expensive business decision. If they form an entity, they might want to see whether they could have investors supply some extra money to help them cover the cost of importing the beans. They would plan on giving the investors some kind of profit interest in the business in exchange for their help, but aren\u2019t too familiar with how that would work.\\n\\nIn addition, this venture has largely been A\u2019s project. B and C aren\u2019t quite as invested, as they have more time-consuming careers of their own. The group\u2019s other friends, D and E, however, have kept in touch with A and have expressed interest in joining the business in place of B and C. B and C might be open to this as well, but will need some time to think. A must also later decide if he wants anyone involved with the business to be able to come and go as they please, or if he wants a firmer commitment from anyone involved with the truck (either B and C or D and E) to devote more of their time and resources to it.\\n\\nDetails:\\nThree-person...\\nSale of Goods\\nPersonal Property\\nEntity Selection\\n\\nComplexity Tags:\\n1. Memo needed\\n2. Diverging Interests of Clients\\n8. Multiple Sessions Needed for Entity Choice\\n\\nComplexity: Medium",
+  "plan": "1. Gather basic information, discover any underlying complexities\\n    1.1 Ask Default Questions\\n        1.1.1 Take Notes\\n    1.2 Identify potential complications/follow-up questions\\n        1.2.1 Ask follow-up questions\\n    1.3 Identify gaps in knowledge\\n        1.3.1 Search within appropriate realm of resources\\n        1.3.2 Consult colleagues and obtain feedback\\n\\n2. Decide on recommendation to client(s), file forms\\n    2.1 Think about recommendations\\n        2.1.1 Consider counter-arguments/pros and cons\\n    2.2 Identify most important considerations / Decide whether open/shut\\n        2.2.1 Identify whether you can reasonably represent interests of all clients in this case\\n        2.2.2 Communicate with clients if needed\\n    2.3 Determine if you're doing business out of state (will need to file for each state)\\n        2.3.1 Search for relevant info about determining state jx\\n            2.3.1.1 Ask follow-up questions to client if needed\\n        2.3.2 Consult Secretary of State business filling resources (or similar) in relevant jx\\n        2.3.3 File forms personally\\n        2.3.4 Meet with client to file forms\\n        2.3.5 Write memo to client about how to file forms\\n\\n3. Send memo to client\\n    3.1 Write memo\\n        3.1.1 Obtain feedback from colleagues\\n            3.1.1.1 Revise memo\\n        3.1.2 Identify gaps in knowledge (#3)\\n            3.1.2.1 Search within appropriate realm of resources\\n\\n4. Write an Operating Agreement\\n    4.1 Search available template docs\\n        4.1.1 Edit selected template document to create operating agreement\\n            4.1.1.1 Obtain feedback from colleagues\\n                4.1.1.1.1 Revise operating agreement\\n            4.1.1.2 Compare with past agreements/documents used\\n        4.1.2 Identify applicable precedents\\n            4.1.2.1 Determine best (most well-crafted, most precise) and most relevant resources\\n            4.1.2.2 Identify various clauses, provisions that will be useful\\n\\n5. Address Tax Treatment of Entity\\n    5.1 Ask default tax questions of client\\n    5.2 Ask default tax questions of entity\\n    5.3 Identify gaps in knowledge (#5)\\n    5.4 Search within appropriate realm of resources\\n    5.5 Decide whether open/shut\\n        5.5.1 Advise on best entity form\\n        5.5.2 Refer out to tax professional if necessary",
+  "agent": "llm",
+  "agent_id": 1,
+  "execution": [
+    {
+      "step_id": 1,
+      "current_task": "1.1 Ask Default Questions",
+      "action_taken": null,
+      "task_content": "<lawyer_action>\\nAlex sits at their desk, reviewing the notes from the latest client conversation. They create a concise list of unresolved items:\\n\\n1) Financial Details:  \\n   • The amount of money needed for bean imports (short-term and long-term).  \\n   • Whether additional, non-friend investors will require special documentation or licensing.  \\n\\n2) Ownership and Roles:  \\n   • Clarification of B and C’s ultimate decisions about remaining in or exiting the venture.  \\n   • Definitive information on D and E’s roles, whether operational or primarily financial.  \\n\\n3) Structure and Flexibility:  \\n   • The group’s comfort level with a structure that allows partners to come and go.  \\n   • Any preferences regarding mandatory capital contributions or time commitments.  \\n\\nAlex notes each open question and highlights the importance of pinning down the total capital requirement, the type of investor interest to be offered, and a clear timeline. Alex also considers whether state regulations might impact the coffee truck’s mobility and if out-of-state registration questions need immediate research.  \\n\\nFinally, Alex plans the next move: searching through state and local regulations about mobile food businesses, typical investor agreements for small-scale ventures, and standard ownership transition clauses. Alex makes a note to consult colleagues if any complexities arise, especially regarding multi-owner transitions.\\n\\n</lawyer_action>",
+      "next_task": "1.3.1 Search within appropriate realm of resources",
+      "task_type": null,
+      "llm_reasoning": "<step_analysis>\\na) High-Level Plan Steps (abbreviated):\\n1.1 Ask Default Questions  \\n1.2 Identify potential complications/follow-up questions  \\n1.3 Identify gaps in knowledge  \\n2. Decide on recommendation to client(s), file forms  \\n3. Send memo to client  \\n4. Write an Operating Agreement  \\n5. Address Tax Treatment of Entity  \\n\\nb) Relation to the Suggested Step (1.3 Identify Gaps in Knowledge):  \\n   • The lawyer has gathered basic information and asked follow-up questions regarding B and C’s involvement, D and E’s potential roles, and the use of outside investors.  \\n   • The scenario reveals uncertainty about how much funding is needed, what the profit-sharing or ownership structure will be, and how flexible membership might be.  \\n   • Step 1.3 requires the lawyer to pinpoint exactly which details are still missing so they can be addressed before making a formal recommendation.\\n\\nc) Which Parties Are Involved:  \\n   • This step primarily involves the lawyer’s internal review. The lawyer needs to reflect on previous discussions and identify info gaps that must be filled, either by further client questioning or independent research.\\n\\nd) Brainstorm of Key Points:  \\n   • Clarify the total amount of capital needed from investors.  \\n   • Determine the desired ownership structure, especially around B, C, D, and E’s involvement.  \\n   • Understand timeline constraints and any licensing or state-specific requirements.  \\n   • Ascertain how flexible the arrangement should be regarding future ownership changes.\\n\\ne) Structure for the Lawyer’s Actions:  \\n   1. Review notes from prior meetings.  \\n   2. List unanswered questions (e.g., exact fundraising targets, formal roles of each participant, distribution of profits, long-term business goals).  \\n   3. Plan next steps to fill those gaps (further client communication, legal resource research, possible colleague consultation).\\n\\ng) Does This Step Complete the Business Formation Process?  \\n   • No. The lawyer still needs to investigate and gather more information before moving to entity recommendations.  \\n</step_analysis>\\n\\n<knowledge_assessment>\\na) Information the Lawyer Knows:  \\n   • A owns the coffee trailer; B and C may or may not continue in the venture.  \\n   • D and E are potential replacements or additional partners, with D possibly doing hands-on weekend work and E considering a financial role.  \\n   • There is a desire to bring in outside investors to help fund the expensive importation of Hawaiian coffee beans.  \\n   • The group wants a flexible yet stable structure, balancing the ability to exit with the need for commitment.\\n\\nb) Information the Lawyer Does Not Know:  \\n   • Exactly how much capital is needed from outside investors.  \\n   • Potential share or profit interest investors would receive.  \\n   • How the ownership percentages would be divided if B and C reduce involvement or exit, and D and E step in.  \\n   • Specific timeline for finalizing all roles and stakes.  \\n\\nc) Effect on Approach:  \\n   • The lawyer must clarify financial targets, ownership preferences, and membership transition terms.  \\n   • Additional research may be needed on state-specific regulations if the business travels to events or if out-of-state filing requirements come into play.  \\n   • The lawyer should prepare to advise on both flexible and more rigid ownership structures once these knowledge gaps are filled.\\n</knowledge_assessment>",
+      "llm_complete_output": "<step_analysis>\\n......\\n</step_analysis>\\n\\n<knowledge_assessment>\\n......\\n</knowledge_assessment>\\n\\n<lawyer_action>\\n......\\n</lawyer_action>\\n\\n<next_suggested_step>\\n1.3.1 Search within appropriate realm of resources\\n</next_suggested_step>"
     }
-    .insights-list-container {
-      text-align: center;
-      width: 80%;
-      margin: 1rem auto 0;
+  ]
+}`;
+
+  function escapeMultiline(str) {
+  // keep new‑line handling but DO NOT escape angle brackets
+  return str.replace(/\\n/g, "\n");
+}
+
+
+  function renderJSON(data, indent = 0, isRoot = false, skipBrackets = false) {
+    const container = document.createElement('div');
+    container.style.marginLeft = `${indent * 20}px`;
+
+    if (typeof data !== 'object' || data === null) {
+      const span = document.createElement('span');
+      span.style.color = typeof data === 'string' ? '#006400' : 'blue';
+      span.style.whiteSpace = 'pre-wrap';
+      span.textContent = typeof data === 'string'
+        ? `"${escapeMultiline(data)}"`
+        : String(data);
+      container.appendChild(span);
+      return container;
     }
-    .insights-list-container ul {
-      padding-left: 1rem;
-      margin: 0;
-      text-align: justify;
-      font-family: 'Noto Sans', sans-serif;
-      font-size: 1.2rem;
-      line-height: 1.6;
-      color: #333;
-    }
-    .insights-list-container li {
-      margin-bottom: 0.5rem;
-    }
-    .insights-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0,0,0,0.5);
-      color: white;
-      border: none;
-      padding: 8px;
-      cursor: pointer;
-    }
-    #insights-prev {
-      left: 5%;
-    }
-    #insights-next {
-      right: 5%;
-    }
-    @media (max-width: 768px) {
-      .insights-image, .insights-list-container {
-        width: 100%;
-      }
-    }
-  </style>
-  
-  <script>
-    (function(){
-      const slides = [
-        {
-          researchQuestion: "Is the time distribution across subtasks consistent among different law RAs?",
-          src: "./assets/images/DataInsights1.png",
-          alt: "Data Insights Slide 1",
-          insights: [
-            "There is a consistent pattern across the four law RAs, with more than 50% of their time dedicated to Subtask 1: Gather Basic Information, and around 10–20% allocated to Subtask 2: Decide on recommendation to cline(s). Subtasks 3: Send memo and Subtask 4: Write an Operating Agreement each account for less than 20%, while Tax Treatment takes up less than 5% of the total time.",
-            "There is minimal variation among projects for each law RA, except for Law RA 3, who shows notable differences."
-          ]
-        },
-        {
-          researchQuestion: "Is the time distribution across nodes consistent among different law RAs?",
-          src: "./assets/images/dataInsights2.png",
-          alt: "Data Insights Slide 2",
-          insights: [
-            "There are large variations among each law RAs and differences across each law RA."
-          ]
-        },
-        {
-          researchQuestion: "What is the order in which law RAs complete their subtasks? Does it align with the predefined diagram?",
-          src: "./assets/images/dataInsights3.png",
-          alt: "Data Insights Slide 3",
-          insights: [
-            "Law RA 1 and Law RA 2 follow the order specified in the diagram. Interestingly, before writing the memo or Operating Agreement (OA), they often revisit Subtask 1: Gather Basic Information to refresh their understanding of the client’s details.",
-            "Law RA 3 and Law RA 4, however, tend to work on Subtask 1 and Subtask 2 interchangeably.",
-            "Another observed pattern, which the law RAs confirmed, is that they typically begin Subtask 3: Send Memo to Client only after working on Subtask 4: Write an Operating Agreement for a while."
-          ]
-        },
-        {
-          researchQuestion: "What is the order in which law RAs complete their subtasks? Does it align with the predefined diagram?",
-          src: "./assets/images/dataInsights4.png",
-          alt: "Data Insights Slide 4",
-          insights: [
-            "Law RA 1 and Law RA 2 switch between interactive, observable, and introspective subtasks, frequently alternating between different types.",
-            "In contrast, Law RA 3 and Law RA 4 tend to focus on one type of subtask at a time before moving on to the next. They only focus on observable tasks or introspective tasks at a time."
-          ]
-        }
-      ];
-      
-      let currentIndex = 0;
-      const researchElement = document.getElementById("insights-research");
-      const imageElement = document.getElementById("insights-image");
-      const listElement = document.getElementById("insights-list");
-      
-      function updateSlide() {
-        const slide = slides[currentIndex];
-        researchElement.textContent = slide.researchQuestion;
-        imageElement.src = slide.src;
-        imageElement.alt = slide.alt;
-        // Clear current list
-        listElement.innerHTML = "";
-        slide.insights.forEach(function(point) {
-          const li = document.createElement("li");
-          li.textContent = point;
-          listElement.appendChild(li);
-        });
-      }
-      
-      document.getElementById("insights-prev").addEventListener("click", function(){
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        updateSlide();
+
+    if (Array.isArray(data)) {
+      const arrayContainer = document.createElement('div');
+      data.forEach((item, idx) => {
+        const line = document.createElement('div');
+        line.classList.add('json-line', `indent-${indent}`, idx % 2 === 0 ? 'even' : 'odd');
+        line.appendChild(renderJSON(item, indent + 1, false, true));
+        arrayContainer.appendChild(line);
       });
-      document.getElementById("insights-next").addEventListener("click", function(){
-        currentIndex = (currentIndex + 1) % slides.length;
-        updateSlide();
+      container.appendChild(arrayContainer);
+      return container;
+    }
+
+    const entries = Object.entries(data);
+    entries.forEach(([key, value], idx) => {
+      const line = document.createElement('div');
+      line.classList.add('json-line', `indent-${indent}`, idx % 2 === 0 ? 'even' : 'odd');
+
+      const keySpan = document.createElement('span');
+      keySpan.style.color = 'red';
+      keySpan.textContent = `"${key}"`;
+
+      line.appendChild(keySpan);
+      line.appendChild(document.createTextNode(': '));
+
+      if (key === 'execution' && Array.isArray(value)) {
+        container.appendChild(line);
+        value.forEach(obj => container.appendChild(renderJSON(obj, indent + 1, false, true)));
+      } else {
+        line.appendChild(renderJSON(value, indent + 1));
+        container.appendChild(line);
+      }
+    });
+
+    return container;
+  }
+
+  function loadPreviews() {
+    const previewHuman = document.getElementById('json-preview-human');
+    const previewLLM = document.getElementById('json-preview-llm');
+    try {
+      previewHuman.appendChild(renderJSON(JSON.parse(sampleJsonHuman), 0, true));
+      previewLLM.appendChild(renderJSON(JSON.parse(sampleJsonLLM), 0, true));
+    } catch (e) {
+      previewHuman.textContent = "Error parsing JSON";
+      previewLLM.textContent = "Error parsing JSON";
+    }
+  }
+
+  loadPreviews();
+
+  document.querySelectorAll('.agreement-example').forEach(function(example) {
+    const tabs = example.querySelectorAll('.tab-button');
+    const contents = example.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        const selected = this.getAttribute('data-tab');
+        tabs.forEach(t => t.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+        this.classList.add('active');
+        example.querySelector(`.tab-content[data-content="${selected}"]`).classList.add('active');
       });
-      
-      // Initialize the first slide
-      updateSlide();
-    })();
-  </script>
+    });
+  });
+</script>
   
   <!-- ---------- Call for Participation Section ---------- -->
 <section class="call-for-participation">

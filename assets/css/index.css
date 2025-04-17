@@ -391,12 +391,12 @@ body {
 
     /* Dataset Card Section Styles */
     .dataset-card-section {
-      background-color: #ffffff;
+      background-color: #f3f3f3;
       width: 100%;
       padding: 60px 0;
     }
     .dataset-card-container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 0 20px;
       text-align: center;
@@ -418,7 +418,7 @@ body {
     }
     /* JSON Preview Card Styles */
     .json-preview {
-      max-height: 400px;
+      max-height: 600px;
       overflow-y: auto;
       border: 1px solid #ccc;
       border-radius: 8px;
