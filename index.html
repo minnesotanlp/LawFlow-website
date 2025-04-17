@@ -39,35 +39,28 @@
       <div class="author">
         <a href="https://debaratidas94.github.io/">
           <img src="./assets/images/deb.jpg" alt="Debarati Das">
-          Debarati Das<sup>*</sup>
-        </a>
-        <div class="affiliation">Computer Science</div>
-      </div>
-      <div class="author">
-        <a href="https://karinjd.github.io/">
-          <img src="./assets/images/karin.png" alt="Karin De Langis">
-          Karin De Langis<sup>*</sup>
+          Debarati Das
         </a>
         <div class="affiliation">Computer Science</div>
       </div>
       <div class="author">
         <a href="https://chile2706.github.io/">
           <img src="./assets/images/khanh.png" alt="Khanh Chi Le">
-          Khanh Chi Le
+          Khanh Chi Le<sup>*</sup>
         </a>
         <div class="affiliation">Computer Science</div>
       </div>
       <div class="author">
         <a href="https://www.linkedin.com/in/ritikparkar88/">
           <img src="./assets/images/ritik.jpg" alt="Ritik Parkar">
-          Ritik Parkar
+          Ritik Parkar<sup>*</sup>
         </a>
         <div class="affiliation">Computer Science</div>
       </div>
       <div class="author">
-        <a href="https://jong-inn.github.io/">
-          <img src="./assets/images/jong.png" alt="Jong Inn Park">
-          Jong Inn Park
+        <a href="https://karinjd.github.io/">
+          <img src="./assets/images/karin.png" alt="Karin De Langis">
+          Karin De Langis
         </a>
         <div class="affiliation">Computer Science</div>
       </div>
@@ -178,50 +171,108 @@
 
 
 
-  <!-- Overview Section -->
-  <section class="overview-section">
-    <div class="overview-container">
-      <h2>Research Overview</h2>
-      <ul>
-        <li>
+<!-- ---------- Overview Section ---------- -->
+<section class="overview-section">
+  <div class="overview-container">
+    <h2>Research Overview</h2>
 
-          LawFlow is a dataset that captures full end-to-end legal workflows, revealing how law students navigate real-world drafting tasks like business entity formation, from client consultations to drafting and filing legal documents. Unlike existing legal AI benchmarks that focus on isolated tasks, LawFlow models the entire decision process, including ambiguity, iteration, and client-specific reasoning.
+    <ul>
+      <li>
+        LawFlow captures full end‑to‑end legal workflows, revealing how law students
+        navigate drafting tasks such as business‑entity formation—covering everything
+        from client intake to filing. Unlike existing legal‑AI benchmarks that focus on
+        isolated tasks, LawFlow records the entire decision process, including
+        ambiguity, iteration, and client‑specific reasoning.
+      </li>
+      <li>
+        By comparing human and LLM‑generated workflows, LawFlow uncovers how human
+        legal reasoning is modular, adaptive, and context‑sensitive—while LLMs tend to
+        follow rigid, linear paths. These insights open new directions for building
+        collaborative AI tools that support, rather than replace, human legal judgment.
+      </li>
+    </ul>
 
-        </li>
-        <li>
-          By comparing human and LLM-generated workflows, LawFlow uncovers how human legal reasoning is modular, adaptive, and context-sensitive—while LLMs tend to follow rigid, linear paths. These insights open new directions for building collaborative AI tools that support, rather than replace, human legal judgment.
-        </li>
-      </ul>
-      <div class="overview-gallery">
-        <img id="overview-image" src="./assets/images/figure_1.png" alt="Project Diagram">
-      </div>
+    <!-- media carousel -->
+    <div class="overview-gallery" style="position:relative; text-align:center; padding: 0 50px;">
+      <button id="prev-button" aria-label="Previous"
+              style="position:absolute; left:-50px; top:50%; transform:translateY(-50%);
+                     background:rgba(0,0,0,0.6); color:#fff; border:none;
+                     padding:8px 12px; cursor:pointer; font-size:1.2rem; z-index:10;">
+        &#8592;
+      </button>
+
+      <!-- video element -->
+      <video id="overview-video" controls style="max-width:100%; border-radius:4px;">
+        <source id="overview-video-source" src="./assets/video/output.mov" type="video/mp4">
+        Your browser doesn't support HTML5 video.
+      </video>
+
+      <!-- image / gif element -->
+      <img id="overview-image"
+           src=""
+           alt=""
+           style="max-width:100%; height:auto; display:none;" />
+
+      <button id="next-button" aria-label="Next"
+              style="position:absolute; right:-50px; top:50%; transform:translateY(-50%);
+                     background:rgba(0,0,0,0.6); color:#fff; border:none;
+                     padding:8px 12px; cursor:pointer; font-size:1.2rem; z-index:10;">
+        &#8594;
+      </button>
     </div>
-  </section>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const images = [
-        { src: './assets/images/figure_1.png', alt: 'Project Diagram' },
-        { src: './assets/gifs/IntroGif.gif', alt: 'Platform Tool Work Demo' }
-      ];
-      let currentIndex = 0;
-      const overviewImage = document.getElementById('overview-image');
-      const prevButton = document.getElementById('prev-button');
-      const nextButton = document.getElementById('next-button');
-  
-      prevButton.addEventListener('click', function() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        overviewImage.src = images[currentIndex].src;
-        overviewImage.alt = images[currentIndex].alt;
-      });
-  
-      nextButton.addEventListener('click', function() {
-        currentIndex = (currentIndex + 1) % images.length;
-        overviewImage.src = images[currentIndex].src;
-        overviewImage.alt = images[currentIndex].alt;
-      });
-    });
-  </script>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const media = [
+    { type: 'image', src: './assets/gifs/output.gif', alt: 'Platform Tool Work Demo' },
+    { type: 'image', src: './assets/images/figure_1.png', alt: 'Project Diagram' }
+  ];
+
+  let index = 0;
+  const imgEl  = document.getElementById('overview-image');
+  const vidEl  = document.getElementById('overview-video');
+  const vidSrc = document.getElementById('overview-video-source');
+  const prev   = document.getElementById('prev-button');
+  const next   = document.getElementById('next-button');
+
+  function render(idx) {
+    const item = media[idx];
+
+    if (item.type === 'video') {
+      imgEl.style.display = 'none';
+      vidEl.style.display = 'block';
+      if (vidSrc.src !== location.origin + '/' + item.src.replace(/^\.\//, '')) {
+        vidSrc.src = item.src;
+        vidEl.load(); // reload only when source changes
+      }
+      vidEl.setAttribute('aria-label', item.alt);
+    } else { // image / gif
+      vidEl.pause();
+      vidEl.style.display = 'none';
+      imgEl.style.display = 'block';
+      imgEl.src = item.src;
+      imgEl.alt = item.alt;
+    }
+  }
+
+  prev.addEventListener('click', () => {
+    index = (index - 1 + media.length) % media.length;
+    render(index);
+  });
+
+  next.addEventListener('click', () => {
+    index = (index + 1) % media.length;
+    render(index);
+  });
+
+  /* show first item on load */
+  render(index);
+});
+</script>
+
+
 
 
 
@@ -335,65 +386,6 @@
       updateWorkflowImage();
     });
   </script>
-
-
-  <!-- ---------- Workflow Visualization Section ---------- -->
-<section class="workflow-visualization-section">
-    <div class="workflow-visualization-container">
-      <h2>Workflow Visualization</h2>
-      <div class="video-container">
-        <video id="workflow-video" controls>
-          <source id="workflow-video-source" src="" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-      <p class="workflow-caption" id="workflow-caption"></p>
-      <button id="workflow-prev" class="workflow-nav">&#8592;</button>
-      <button id="workflow-next" class="workflow-nav">&#8594;</button>
-    </div>
-  </section>
-  
-
-  <script>
-    (function(){
-      const videos = [
-        {
-          src: "./assets/videos/vid1.mov",
-          alt: "Scenario 1",
-          caption: "Scenario 1"
-        },
-        {
-          src: "./assets/videos/vid2.mov",
-          alt: "Scenario 2",
-          caption: "Scenario 2"
-        }
-      ];
-      let currentIndex = 0;
-      const videoElement = document.getElementById('workflow-video');
-      const sourceElement = document.getElementById('workflow-video-source');
-      const captionElement = document.getElementById('workflow-caption');
-      
-      function updateVideo() {
-        const currentVideo = videos[currentIndex];
-        sourceElement.src = currentVideo.src;
-        // Reload the video to update the source
-        videoElement.load();
-        captionElement.textContent = currentVideo.caption;
-      }
-      
-      document.getElementById('workflow-prev').addEventListener('click', function(){
-        currentIndex = (currentIndex - 1 + videos.length) % videos.length;
-        updateVideo();
-      });
-      document.getElementById('workflow-next').addEventListener('click', function(){
-        currentIndex = (currentIndex + 1) % videos.length;
-        updateVideo();
-      });
-      
-      // Initialize the video display
-      updateVideo();
-    })();
-  </script>
   
 
 <!-- ---------- Sample Operating Agreements Section ---------- -->
@@ -495,7 +487,7 @@
 
 <style>
   .data-insights-section {
-    background-color: #ffffff;
+    background-color: #f3f3f3;
     width: 100%;
     padding: 60px 0;
   }
