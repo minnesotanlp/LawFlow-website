@@ -175,7 +175,6 @@
 <section class="overview-section">
   <div class="overview-container">
     <h2>Research Overview</h2>
-
     <ul>
       <li>
         LawFlow captures full end‑to‑end legal workflows, revealing how law students
@@ -191,90 +190,13 @@
         collaborative AI tools that support, rather than replace, human legal judgment.
       </li>
     </ul>
-
-    <!-- media carousel -->
-    <div class="overview-gallery" style="position:relative; text-align:center; padding: 0 50px;">
-      <button id="prev-button" aria-label="Previous"
-              style="position:absolute; left:-50px; top:50%; transform:translateY(-50%);
-                     background:rgba(0,0,0,0.6); color:#fff; border:none;
-                     padding:8px 12px; cursor:pointer; font-size:1.2rem; z-index:10;">
-        &#8592;
-      </button>
-
-      <!-- video element -->
-      <video id="overview-video" controls style="max-width:100%; border-radius:4px;">
-        <source id="overview-video-source" src="./assets/video/output.mov" type="video/mp4">
-        Your browser doesn't support HTML5 video.
-      </video>
-
-      <!-- image / gif element -->
-      <img id="overview-image"
-           src=""
-           alt=""
-           style="max-width:100%; height:auto; display:none;" />
-
-      <button id="next-button" aria-label="Next"
-              style="position:absolute; right:-50px; top:50%; transform:translateY(-50%);
-                     background:rgba(0,0,0,0.6); color:#fff; border:none;
-                     padding:8px 12px; cursor:pointer; font-size:1.2rem; z-index:10;">
-        &#8594;
-      </button>
+    <div class="overview-gallery" style="text-align:center;">
+      <img src="./assets/images/figure_1.png"
+           alt="Project Diagram"
+           style="max-width:100%; height:auto;">
     </div>
   </div>
 </section>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const media = [
-    { type: 'image', src: './assets/gifs/output.gif', alt: 'Platform Tool Work Demo' },
-    { type: 'image', src: './assets/images/figure_1.png', alt: 'Project Diagram' }
-  ];
-
-  let index = 0;
-  const imgEl  = document.getElementById('overview-image');
-  const vidEl  = document.getElementById('overview-video');
-  const vidSrc = document.getElementById('overview-video-source');
-  const prev   = document.getElementById('prev-button');
-  const next   = document.getElementById('next-button');
-
-  function render(idx) {
-    const item = media[idx];
-
-    if (item.type === 'video') {
-      imgEl.style.display = 'none';
-      vidEl.style.display = 'block';
-      if (vidSrc.src !== location.origin + '/' + item.src.replace(/^\.\//, '')) {
-        vidSrc.src = item.src;
-        vidEl.load(); // reload only when source changes
-      }
-      vidEl.setAttribute('aria-label', item.alt);
-    } else { // image / gif
-      vidEl.pause();
-      vidEl.style.display = 'none';
-      imgEl.style.display = 'block';
-      imgEl.src = item.src;
-      imgEl.alt = item.alt;
-    }
-  }
-
-  prev.addEventListener('click', () => {
-    index = (index - 1 + media.length) % media.length;
-    render(index);
-  });
-
-  next.addEventListener('click', () => {
-    index = (index + 1) % media.length;
-    render(index);
-  });
-
-  /* show first item on load */
-  render(index);
-});
-</script>
-
-
-
-
 
 <!-- ---------- Platform Section ---------- -->
 <section class="platform-section">
@@ -284,24 +206,70 @@ document.addEventListener('DOMContentLoaded', () => {
       Our database captures real-world business entity formation scenarios, starting with a seed scenario provided by a local business. Through conversations with the business owner, a lawyer initiates the legal process, meticulously documenting and taking notes of each step—from initial discussions to formal filings. The process culminates in a finalized agreement document, serving as the definitive legal outcome.
     </p>
 
-<div class="platform-image-container" style="text-align: center; margin: 20px 0;">
-  <img src="./assets/images/figure_2.png" alt="Platform Overview" style="max-width: 100%; height: auto; border-radius: 8px;" />
-</div>
+    <div class="overview-gallery" style="position:relative; text-align:center; padding:0 50px;">
+      <button id="platform-prev" aria-label="Previous"
+              style="position:absolute; left:0; top:50%; transform:translate(-100%, -50%);
+                     background:rgba(0,0,0,0.6); color:#fff; border:none;
+                     padding:8px 12px; cursor:pointer; font-size:1.2rem;">
+        &#8592;
+      </button>
 
-<h3 class="platform-how">Key Features:</h3>
-<ul class="platform-bullets">
-  <li>📌 <strong>Subtask Annotation</strong> – Tag actions to modular task nodes from an expert-verified legal workflow. Supports non-linear paths and rationale logging.</li>
-  <li>📌 <strong>Live Note-Taking</strong> – Persistent field for informal notes (e.g., during client intake), with full keystroke logging for later analysis.</li>
-  <li>📌 <strong>Template Library</strong> – Access and reuse agreement templates, simulating real-world use of legal precedents and boilerplate search.</li>
-  <li>📌 <strong>Legal Search Interface</strong> – Perform open and template-specific searches, reflecting how legal professionals integrate research into decisions.</li>
-  <li>📌 <strong>Document Editor</strong> – Draft agreements in a built-in word processor; all edits are logged to capture revision behavior over time.</li>
-</ul>
-<p class="platform-description">
-  This data collection tool enables us to study not just what decisions are made while drafting by law students, but also how they adapt, iterate, and navigate ambiguity across the full drafting workflow.
-</p>
-</div>
+      <img id="platform-image"
+           src="./assets/gifs/output.gif"
+           alt="Platform Demo"
+           style="max-width:100%; height:auto; border-radius:8px;" />
+
+      <button id="platform-next" aria-label="Next"
+              style="position:absolute; right:0; top:50%; transform:translate(100%, -50%);
+                     background:rgba(0,0,0,0.6); color:#fff; border:none;
+                     padding:8px 12px; cursor:pointer; font-size:1.2rem;">
+        &#8594;
+      </button>
+    </div>
+
+    <h3 class="platform-how">Key Features:</h3>
+    <ul class="platform-bullets">
+      <li>📌 <strong>Subtask Annotation</strong> – Tag actions to modular task nodes from an expert-verified legal workflow. Supports non-linear paths and rationale logging.</li>
+      <li>📌 <strong>Live Note-Taking</strong> – Persistent field for informal notes (e.g., during client intake), with full keystroke logging for later analysis.</li>
+      <li>📌 <strong>Template Library</strong> – Access and reuse agreement templates, simulating real-world use of legal precedents and boilerplate search.</li>
+      <li>📌 <strong>Legal Search Interface</strong> – Perform open and template-specific searches, reflecting how legal professionals integrate research into decisions.</li>
+      <li>📌 <strong>Document Editor</strong> – Draft agreements in a built-in word processor; all edits are logged to capture revision behavior over time.</li>
+    </ul>
+    <p class="platform-description">
+      This data collection tool enables us to study not just what decisions are made while drafting by law students, but also how they adapt, iterate, and navigate ambiguity across the full drafting workflow.
+    </p>
+  </div>
 </section>
- 
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const media = [
+      { src: './assets/gifs/output.gif',      alt: 'Platform Demo' },
+      { src: './assets/images/figure_2.png',  alt: 'Platform Overview' }
+    ];
+    let idx = 0;
+    const img = document.getElementById('platform-image');
+    const prev = document.getElementById('platform-prev');
+    const next = document.getElementById('platform-next');
+
+    function show(i) {
+      img.src = media[i].src;
+      img.alt = media[i].alt;
+    }
+
+    prev.addEventListener('click', () => {
+      idx = (idx - 1 + media.length) % media.length;
+      show(idx);
+    });
+
+    next.addEventListener('click', () => {
+      idx = (idx + 1) % media.length;
+      show(idx);
+    });
+
+    show(idx);
+  });
+</script> 
 
   
 <!-- ---------- Entity Formation Workflow Section ---------- --> 
