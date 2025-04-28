@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LawyerBench - Inside Lawyer's Thought Process</title>
-  <link rel="icon" type="image/x-icon" href="./assets/images/logo.jpg" />
+  <title>LawFlow</title>
+  <link rel="icon" type="image/x-icon" href="./assets/images/LawFlowLogo.png" />
 
   
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
@@ -560,13 +560,21 @@
         ]
       },
       {
-        researchQuestion: "How can we flag unlikely or anomalous steps in a workflow ?",
-        src: "./assets/images/RQ4.png",
-        alt: "Data Insights Slide 3",
+        researchQuestion: "What to do the Step-level beam search visualizations of Human and LLM workflows look like?",
+        src: "./assets/images/RQ5.png",
+        alt: "Data Insights Slide 4",
         insights: [
-          "Each workflow step is scored based on how closely it aligns with typical human behavior. Steps are flagged as 'on track,' 'needs review,' or 'off track,' helping identify actions that follow, diverge from, or significantly depart from common legal reasoning patterns."
+          "The two beam search visualizations are colored by atypicality score (z-score) as predicted by our workflow monitor: Transitions are scored by how well they align with human reasoning norms. Human workflows follow stable, commonly observed reasoning patterns, while LLM workflows exhibit greater variability and introduce less context-sensitive transitions."
         ]
       }
+      // {
+      //   researchQuestion: "How can we flag unlikely or anomalous steps in a workflow ?",
+      //   src: "./assets/images/RQ4.png",
+      //   alt: "Data Insights Slide 3",
+      //   insights: [
+      //     "Each workflow step is scored based on how closely it aligns with typical human behavior. Steps are flagged as 'on track,' 'needs review,' or 'off track,' helping identify actions that follow, diverge from, or significantly depart from common legal reasoning patterns."
+      //   ]
+      // }
     ];
     
     let currentIndex = 0;
@@ -767,22 +775,6 @@
       </div>
     </div>
   </section>
-  
-  <!-- ---------- Citation Section ---------- -->
-  <!-- <section class="citation-section">
-    <div class="bottom-container">
-      <h2>Citation</h2>
-      <pre class="citation-code">
-  @inproceedings{das2025lawyerbench,
-    title={LawyerBench: Collecting and Simulating Lawyers Thought Process},
-    author={Das, Debarati and De Langis, Karin and Le, Khanh Chi and Parkar, Ritik and Madson, Brendan and Moses, Daniel and Willis, Robin and Berryman, Chad and McDonnell, Brett and Schwarcz, Daniel and Kang, Dongyeop},
-    booktitle={Conference on Legal AI},
-    year={2025},
-    organization={University of Minnesota}
-  }
-      </pre>
-    </div>
-  </section> -->
   
   <!-- ---------- Footer Section ---------- -->
   <footer class="site-footer">
